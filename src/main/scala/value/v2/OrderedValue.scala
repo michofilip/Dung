@@ -1,6 +1,6 @@
 package value.v2
 
-import value.v2.Value.{Grater, GraterEqual, Less, LessEqual}
+import value.v2.BooleanValue.{Grater, GraterEqual, Less, LessEqual}
 
 private[value] trait OrderedValue[T] extends Value[T] {
     def <(that: OrderedValue[_]): Less = Less(this, that)
