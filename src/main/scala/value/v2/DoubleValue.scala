@@ -64,6 +64,8 @@ private[value] abstract class DoubleValue extends Value[Double] with NumericValu
 }
 
 object DoubleValue {
+    implicit def num2d(value: NumericValue[_]): DoubleValue = NumericToDouble(value)
+    
     implicit def d2V(value: Double): DoubleValue = DoubleConstant(value)
     
     implicit class D2V(value: Double) {

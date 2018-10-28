@@ -12,6 +12,8 @@ private[value] abstract class StringValue extends Value[String] {
 }
 
 object StringValue {
+    implicit def num2str(value: NumericValue[_]): StringValue = NumericToString(value)
+    
     implicit def str2V(value: String): StringValue = StringConstant(value)
     
     implicit class String2V(value: String) {

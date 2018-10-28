@@ -65,6 +65,8 @@ sealed abstract class FloatValue extends Value[Float] with NumericValue[Float] w
 }
 
 object FloatValue {
+    implicit def num2f(value: NumericValue[_]): FloatValue = NumericToFloat(value)
+    
     implicit def f2V(value: Float): FloatValue = FloatConstant(value)
     
     implicit class F2V(value: Float) {

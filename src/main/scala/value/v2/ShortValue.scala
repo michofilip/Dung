@@ -77,6 +77,8 @@ sealed abstract class ShortValue extends Value[Short] with NumericValue[Short] w
 }
 
 object ShortValue {
+    implicit def num2s(value: NumericValue[_]): ShortValue = NumericToShort(value)
+    
     implicit def s2V(value: Short): ShortValue = ShortConstant(value)
     
     implicit class S2V(value: Short) {

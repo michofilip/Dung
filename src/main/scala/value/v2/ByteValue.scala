@@ -78,6 +78,8 @@ private[value] abstract class ByteValue extends Value[Byte] with NumericValue[By
 }
 
 object ByteValue {
+    implicit def num2b(value: NumericValue[_]): ByteValue = NumericToByte(value)
+    
     implicit def b2V(value: Byte): ByteValue = ByteConstant(value)
     
     implicit class B2V(value: Byte) {

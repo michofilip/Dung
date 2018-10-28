@@ -76,6 +76,8 @@ private[value] abstract class LongValue extends Value[Long] with NumericValue[Lo
 }
 
 object LongValue {
+    implicit def num2l(value: NumericValue[_]): LongValue = NumericToLong(value)
+    
     implicit def l2V(value: Long): LongValue = LongConstant(value)
     
     implicit class L2V(value: Long) {

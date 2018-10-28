@@ -76,6 +76,8 @@ private[value] abstract class IntValue extends Value[Int] with NumericValue[Int]
 }
 
 object IntValue {
+    implicit def num2i(value: NumericValue[_]): IntValue = NumericToInt(value)
+    
     implicit def i2V(value: Int): IntValue = IntConstant(value)
     
     implicit class I2V(value: Int) {
