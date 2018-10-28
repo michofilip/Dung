@@ -9,7 +9,7 @@ import value.v2.ShortValue._
 
 import scala.language.implicitConversions
 
-sealed abstract class ShortValue extends Value[Short] with NumericValue[Short] with OrderedValue[Short] {
+private[value] abstract class ShortValue extends Value[Short] with NumericValue[Short] with OrderedValue[Short] {
     final def unary_+ : ShortValue = this
     
     final def unary_- : ShortValue = ShortNegate(this)

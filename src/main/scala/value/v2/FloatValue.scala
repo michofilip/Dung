@@ -6,7 +6,7 @@ import value.v2.FloatValue._
 
 import scala.language.implicitConversions
 
-sealed abstract class FloatValue extends Value[Float] with NumericValue[Float] with OrderedValue[Float] {
+private[value] abstract class FloatValue extends Value[Float] with NumericValue[Float] with OrderedValue[Float] {
     final def unary_+ : FloatValue = this
     
     final def unary_- : FloatValue = FloatNegate(this)
