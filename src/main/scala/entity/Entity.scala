@@ -3,7 +3,7 @@ package entity
 import event.Event
 import program.Program
 import states.{Direction, State}
-import value.Value
+import value.v2.Value
 
 sealed abstract class Entity {
     val id: Int

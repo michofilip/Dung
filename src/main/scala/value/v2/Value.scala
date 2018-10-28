@@ -11,7 +11,7 @@ import value.v2.LongValue.LongConstant
 import value.v2.ShortValue.ShortConstant
 import value.v2.StringValue.StringConstant
 
-private[value] abstract class Value[T] {
+abstract class Value[T] {
     def getValue(implicit entityMap: Map[Int, Entity]): Option[T]
     
     def ===(that: Value[_]): BooleanValue = Equals(this, that)
@@ -37,26 +37,4 @@ object Value {
     def apply(value: Char): CharConstant = CharConstant(value)
     
     def apply(value: String): StringConstant = StringConstant(value)
-    
-    // custom abstract classes
-    //    abstract class CustomValue[T] extends Value[T]
-    //
-    //    abstract class CustomByteValue extends ByteValue
-    //
-    //    abstract class CustomShortValue extends ShortValue
-    //
-    //    abstract class CustomIntValue extends IntValue
-    //
-    //    abstract class CustomLongValue extends LongValue
-    //
-    //    abstract class CustomFloatValue extends FloatValue
-    //
-    //    abstract class CustomDoubleValue extends DoubleValue
-    //
-    //    abstract class CustomBooleanValue extends BooleanValue
-    //
-    //    abstract class CustomCharValue extends CharValue
-    //
-    //    abstract class CustomStringValue extends StringValue
-    
 }
